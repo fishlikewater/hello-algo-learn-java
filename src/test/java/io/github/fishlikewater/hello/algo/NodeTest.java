@@ -4,21 +4,21 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * {@code ListNodeTest}
+ * {@code NodeTest}
  *
  * @author zhangxiang
  * @version 1.0.0
  * @since 2024/07/01
  */
-public class ListNodeTest {
+public class NodeTest {
 
     @Test
-    public void testListNode() {
+    public void testNode() {
 
-        ListNode<Integer> node1 = new ListNode<>(1);
-        ListNode<Integer> node2 = new ListNode<>(3);
-        ListNode<Integer> node3 = new ListNode<>(4);
-        ListNode<Integer> node4 = new ListNode<>(2);
+        Node<Integer> node1 = new Node<>(1);
+        Node<Integer> node2 = new Node<>(3);
+        Node<Integer> node3 = new Node<>(4);
+        Node<Integer> node4 = new Node<>(2);
 
         node1.next = node2;
         node2.next = node3;

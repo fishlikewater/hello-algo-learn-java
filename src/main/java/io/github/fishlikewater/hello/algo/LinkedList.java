@@ -1,22 +1,22 @@
 package io.github.fishlikewater.hello.algo;
 
 /**
- * {@code LinkList}
- * 实现linklist
+ * {@code LinkedList}
+ * 实现LinkedList
  *
  * @author zhangxiang
  * @version 1.0.0
  * @since 2024/07/01
  */
-public class LinkList<T> {
+public class LinkedList<T> {
 
-    private ListNode<T> head;
+    private Node<T> head;
 
-    private ListNode<T> lastNode;
+    private Node<T> lastNode;
 
     private int size;
 
-    public LinkList() {
+    public LinkedList() {
 
     }
 
@@ -30,17 +30,17 @@ public class LinkList<T> {
 
     public void insert(T t) {
         if (this.head == null) {
-            this.head = new ListNode<T>(t);
+            this.head = new Node<T>(t);
             this.size++;
             return;
         }
-        ListNode<T> node = this.head;
+        Node<T> node = this.head;
         if (this.lastNode == null) {
-            this.lastNode = new ListNode<T>(t);
+            this.lastNode = new Node<T>(t);
             node.next = this.lastNode;
         } else {
-            ListNode<T> oldLast = this.lastNode;
-            this.lastNode = new ListNode<T>(t);
+            Node<T> oldLast = this.lastNode;
+            this.lastNode = new Node<T>(t);
             oldLast.next = this.lastNode;
         }
         this.size++;
@@ -53,15 +53,15 @@ public class LinkList<T> {
             this.size--;
             return val;
         }
-        ListNode<T> preNode = this.getNode(index - 1);
+        Node<T> preNode = this.getNode(index - 1);
         T val = preNode.next.val;
         preNode.next = preNode.next.next;
         this.size--;
         return val;
     }
 
-    private ListNode<T> getNode(int index) {
-        ListNode<T> next = this.head;
+    private Node<T> getNode(int index) {
+        Node<T> next = this.head;
         for (int i = 0; i < index; i++) {
             next = next.next;
         }

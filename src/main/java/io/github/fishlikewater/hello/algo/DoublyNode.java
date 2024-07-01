@@ -1,22 +1,22 @@
 package io.github.fishlikewater.hello.algo;
 
-import lombok.Data;
-
 /**
- * {@code ListNode}
- * 链表节点
+ * {@code DoublyNode}
+ * 双向节点
  *
  * @author zhangxiang
  * @version 1.0.0
  * @since 2024/07/01
  */
-public class ListNode<T> {
+public class DoublyNode<T> {
 
     public T val;
 
-    public ListNode<T> next;
+    public DoublyNode<T> pre;
 
-    ListNode(T x) {
+    public DoublyNode<T> next;
+
+    DoublyNode(T x) {
         this.val = x;
     }
 }

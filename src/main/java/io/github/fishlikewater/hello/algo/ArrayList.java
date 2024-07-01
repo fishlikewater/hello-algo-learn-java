@@ -9,6 +9,7 @@ import java.util.Arrays;
  * @version 1.0.0
  * @since 2024/07/01
  */
+@SuppressWarnings("all")
 public class ArrayList<T> {
 
     private Object[] arr;

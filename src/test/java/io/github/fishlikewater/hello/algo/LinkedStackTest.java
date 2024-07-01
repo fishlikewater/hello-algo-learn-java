@@ -4,18 +4,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * {@code LinkStackTest}
+ * {@code LinkedStackTest}
  * 链表栈
  *
  * @author zhangxiang
  * @version 1.0.0
  * @since 2024/07/01
  */
-public class LinkStackTest {
+public class LinkedStackTest {
 
     @Test
-    public void testLinkStack() {
-        LinkStack<Integer> linkStack = new LinkStack<>();
+    public void testLinkedStack() {
+        LinkedStack<Integer> linkStack = new LinkedStack<>();
         linkStack.push(1);
         linkStack.push(2);
         linkStack.push(3);
