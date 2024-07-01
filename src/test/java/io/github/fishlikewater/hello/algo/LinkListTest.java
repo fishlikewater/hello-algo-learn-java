@@ -26,8 +26,10 @@ public class LinkListTest {
         linkList.insert(1);
         linkList.insert(2);
         linkList.insert(3);
-        linkList.delete(1);
+        linkList.delete(0);
+        Assert.assertEquals(2, (int) linkList.get(0));
         Assert.assertEquals(3, (int) linkList.get(1));
+        Assert.assertEquals(2, linkList.size());
     }
 
     @Test

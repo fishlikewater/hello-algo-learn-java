@@ -12,53 +12,59 @@ public class LinkList<T> {
 
     private ListNode<T> head;
 
+    private ListNode<T> lastNode;
+
+    private int size;
+
     public LinkList() {
 
     }
 
-    public void insert(ListNode<T> n0, ListNode<T> p) {
-        ListNode<T> next = n0.next;
-        n0.next = p;
-        p.next = next;
+    public int size() {
+        return this.size;
     }
 
     public T get(int index) {
-        ListNode<T> next = this.head;
-        for (int i = 0; i < index; i++) {
-            next = next.next;
-        }
-        return next.val;
+        return this.getNode(index).val;
     }
 
     public void insert(T t) {
         if (this.head == null) {
             this.head = new ListNode<T>(t);
+            this.size++;
             return;
         }
         ListNode<T> node = this.head;
-        while (true) {
-            if (node.next == null) {
-                node.next = new ListNode<T>(t);
-                break;
-            }
-            node = node.next;
+        if (this.lastNode == null) {
+            this.lastNode = new ListNode<T>(t);
+            node.next = this.lastNode;
+        } else {
+            ListNode<T> oldLast = this.lastNode;
+            this.lastNode = new ListNode<T>(t);
+            oldLast.next = this.lastNode;
         }
+        this.size++;
     }
 
-    public void delete(int index) {
-        int i = 0;
-        ListNode<T> node = this.head;
-        while (true) {
-            if (node == null) {
-                throw new IllegalArgumentException("index out of range");
-            }
-            if (i == index) {
-                node.val = node.next.val;
-                node.next = node.next.next;
-                break;
-            }
-            node = node.next;
-            i++;
+    public T delete(int index) {
+        if (index == 0) {
+            T val = this.head.val;
+            this.head = this.head.next;
+            this.size--;
+            return val;
         }
+        ListNode<T> preNode = this.getNode(index - 1);
+        T val = preNode.next.val;
+        preNode.next = preNode.next.next;
+        this.size--;
+        return val;
+    }
+
+    private ListNode<T> getNode(int index) {
+        ListNode<T> next = this.head;
+        for (int i = 0; i < index; i++) {
+            next = next.next;
+        }
+        return next;
     }
 }

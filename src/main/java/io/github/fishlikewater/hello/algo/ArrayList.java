@@ -54,7 +54,7 @@ public class ArrayList<T> {
     }
 
     public void insert(int index, T t) {
-        if (index < 0 || index >= this.size) {
+        if (index < 0 || index >= this.capacity) {
             throw new IndexOutOfBoundsException();
         }
         if (size == capacity) {
@@ -67,14 +67,16 @@ public class ArrayList<T> {
         size++;
     }
 
-    public void remove(int index) {
+    public T remove(int index) {
         if (index < 0 || index >= this.size) {
             throw new IndexOutOfBoundsException();
         }
+        Object object = this.arr[index];
         for (int i = index; i < size - 1; i++) {
             this.arr[i] = this.arr[i + 1];
         }
         size--;
+        return (T) object;
     }
 
     public void clear() {
