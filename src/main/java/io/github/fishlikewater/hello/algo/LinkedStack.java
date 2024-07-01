@@ -10,21 +10,33 @@ package io.github.fishlikewater.hello.algo;
  */
 public class LinkedStack<T> {
 
-    private final LinkedList<T> linkList;
+    private Node<T> stackHead = null;
+
+    private int size;
 
     public LinkedStack() {
-        linkList = new LinkedList<>();
+
+    }
+
+    public int size() {
+        return this.size;
     }
 
     public void push(T t) {
-        linkList.insert(t);
+        Node<T> tNode = new Node<>(t);
+        tNode.next = this.stackHead;
+        this.stackHead = tNode;
+        this.size++;
     }
 
     public T pop() {
-        return linkList.delete(this.linkList.size() - 1);
+        T val = this.stackHead.val;
+        this.stackHead = this.stackHead.next;
+        this.size--;
+        return val;
     }
 
     public T peek() {
-        return linkList.get(this.linkList.size() - 1);
+        return this.stackHead.val;
     }
 }
