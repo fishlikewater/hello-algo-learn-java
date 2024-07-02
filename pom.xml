@@ -84,6 +84,14 @@
         </dependencies>
     </dependencyManagement>
 
+    <distributionManagement>
+        <repository>
+            <id>master</id>
+            <name>local</name>
+            <url>file:///${env.MAVEN_REPO}</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
