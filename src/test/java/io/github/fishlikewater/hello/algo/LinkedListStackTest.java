@@ -11,11 +11,11 @@ import org.junit.Test;
  * @version 1.0.0
  * @since 2024/07/01
  */
-public class LinkedStackTest {
+public class LinkedListStackTest {
 
     @Test
     public void testLinkedStack() {
-        LinkedStack<Integer> linkStack = new LinkedStack<>();
+        LinkedListStack<Integer> linkStack = new LinkedListStack<>();
         linkStack.push(1);
         linkStack.push(2);
         linkStack.push(3);

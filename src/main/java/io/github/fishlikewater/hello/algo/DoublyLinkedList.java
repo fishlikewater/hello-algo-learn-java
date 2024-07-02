@@ -30,10 +30,19 @@ public class DoublyLinkedList<T> {
         return size;
     }
 
+    public void insertFirst(T t) {
+        if (this.isNotInitHead(t)) {
+            return;
+        }
+        DoublyNode<T> node = this.head;
+        this.head = new DoublyNode<T>(t);
+        this.head.next = node;
+        node.pre = this.head;
+        this.size++;
+    }
+
     public void insert(T t) {
-        if (this.head == null) {
-            this.head = new DoublyNode<T>(t);
-            this.size++;
+        if (this.isNotInitHead(t)) {
             return;
         }
         DoublyNode<T> node = this.head;
@@ -54,11 +63,37 @@ public class DoublyLinkedList<T> {
         if (index < 0 || index >= this.size) {
             throw new IndexOutOfBoundsException();
         }
+        if (index == 0) {
+            return deleteFirst();
+        }
+        if (index == this.size - 1) {
+            return deleteLast();
+        }
         DoublyNode<T> node = getNode(index);
         node.pre.next = node.next;
         node.next.pre = node.pre;
         this.size--;
         return node.val;
+    }
+
+    public T deleteLast() {
+        if (this.size == 0) {
+            return null;
+        }
+        DoublyNode<T> lastNode = this.lastNode;
+        this.lastNode = this.lastNode.pre;
+        this.size--;
+        return lastNode.val;
+    }
+
+    public T deleteFirst() {
+        if (this.size == 0) {
+            return null;
+        }
+        DoublyNode<T> head = this.head;
+        this.head = this.head.next;
+        this.size--;
+        return head.val;
     }
 
     public T get(int index) {
@@ -75,4 +110,15 @@ public class DoublyLinkedList<T> {
         }
         return next;
     }
+
+    private boolean isNotInitHead(T t) {
+        if (this.head == null) {
+            this.head = new DoublyNode<T>(t);
+            this.lastNode = this.head;
+            this.size++;
+            return true;
+        }
+        return false;
+    }
+
 }

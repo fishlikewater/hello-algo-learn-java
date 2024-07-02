@@ -10,11 +10,11 @@ import org.junit.Test;
  * @version 1.0.0
  * @since 2024/07/01
  */
-public class LinkedQueueTest {
+public class LinkedListQueueTest {
 
     @Test
     public void testLinkedQueue() {
-        LinkedQueue<Integer> queue = new LinkedQueue<>();
+        LinkedListQueue<Integer> queue = new LinkedListQueue<>();
         queue.push(1);
         queue.push(2);
         queue.push(3);

@@ -8,13 +8,13 @@ package io.github.fishlikewater.hello.algo;
  * @version 1.0.0
  * @since 2024/07/01
  */
-public class LinkedStack<T> {
+public class LinkedListStack<T> {
 
     private Node<T> stackHead = null;
 
     private int size;
 
-    public LinkedStack() {
+    public LinkedListStack() {
 
     }
 

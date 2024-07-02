@@ -8,11 +8,11 @@ package io.github.fishlikewater.hello.algo;
  * @version 1.0.0
  * @since 2024/07/01
  */
-public class LinkedQueue<T> {
+public class LinkedListQueue<T> {
 
     private final LinkedList<T> list;
 
-    public LinkedQueue() {
+    public LinkedListQueue() {
         list = new LinkedList<>();
     }
 
