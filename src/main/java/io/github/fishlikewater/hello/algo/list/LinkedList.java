@@ -1,4 +1,6 @@
-package io.github.fishlikewater.hello.algo;
+package io.github.fishlikewater.hello.algo.list;
+
+import io.github.fishlikewater.hello.algo.node.Node;
 
 /**
  * {@code LinkedList}

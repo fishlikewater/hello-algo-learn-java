@@ -1,4 +1,6 @@
-package io.github.fishlikewater.hello.algo;
+package io.github.fishlikewater.hello.algo.stack;
+
+import io.github.fishlikewater.hello.algo.list.ArrayList;
 
 /**
  * {@code ArrayStack}

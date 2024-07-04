@@ -1,4 +1,6 @@
-package io.github.fishlikewater.hello.algo;
+package io.github.fishlikewater.hello.algo.queue;
+
+import io.github.fishlikewater.hello.algo.list.LinkedList;
 
 /**
  * {@code LinkedQueue}

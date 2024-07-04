@@ -1,4 +1,4 @@
-package io.github.fishlikewater.hello.algo;
+package io.github.fishlikewater.hello.algo.node;
 
 /**
  * {@code DoublyNode}
