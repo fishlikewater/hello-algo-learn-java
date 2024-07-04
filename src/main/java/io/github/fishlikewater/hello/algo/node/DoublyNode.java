@@ -16,7 +16,7 @@ public class DoublyNode<T> {
 
     public DoublyNode<T> next;
 
-    DoublyNode(T x) {
+    public DoublyNode(T x) {
         this.val = x;
     }
 }
